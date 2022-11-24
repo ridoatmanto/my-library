@@ -14,6 +14,7 @@ selected_books_data = [
 	"id",
 	"title",
 	"year",
+	"pages",
 	"plot",
 	"copyright",
 	"description",
