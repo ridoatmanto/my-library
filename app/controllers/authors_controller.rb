@@ -5,7 +5,8 @@ class AuthorsController < ApplicationController
 
   def show
     @author = Author.find(params[:id])
-    # @gender_list = {m: "Male", f: "Female"}
+  rescue ActiveRecord::RecordNotFound
+    redirect_to(root_url, :notice => 'Author not found')
   end
 
   def new
