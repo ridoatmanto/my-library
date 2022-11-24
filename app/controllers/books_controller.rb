@@ -20,6 +20,12 @@ class BooksController < ApplicationController
     redirect_to(root_url, :notice => 'Book not found')
   end
 
+  def edit
+    @book = Book.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to(root_url, :notice => 'Book not found')
+  end
+
   def new
     @book = Book.new
   end

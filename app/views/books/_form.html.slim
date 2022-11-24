@@ -1,0 +1,53 @@
+= form_with model: @book do |form|
+  div
+    = form.label :title
+    br
+    = form.text_field :title
+
+  div
+    = form.label :year
+    br
+    = form.text_field :year
+
+  div
+    = form.label :plot
+    br
+    = form.text_area :plot
+
+  div
+    = form.label :copyright
+    br
+    = form.text_field :copyright
+
+  div
+    = form.label :description
+    br
+    = form.text_area :description
+
+  div
+    = form.label :language
+    br
+    = form.text_field :language
+
+  div
+    = form.label :release_date
+    br
+    = form.text_field :release_date
+
+  div
+    = form.label :cover
+    br
+    = form.text_field :cover
+
+  div
+    = form.label :summary
+    br
+    = form.text_area :summary
+
+  div
+    = form.label :classes
+    br
+    = form.text_area :classes
+
+  div
+    = form.submit
