@@ -11,9 +11,7 @@ class Book < ApplicationRecord
   	where(Book.arel_table[:pages].gteq(book_page.to_i))
   }
   scope :filter_by_maximum_book_page, -> (book_page) { 
-  	where("page <= ?", book_page)
+  	where(Book.arel_table[:pages].lteq(book_page.to_i))
   }
-  scope :filter_by_range_book_page, -> (book_page_min, book_page_max) { 
-  	where("page >= ? AND page <= ?", book_page_min, book_page_max)
-  }
+
 end

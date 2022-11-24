@@ -18,9 +18,8 @@ table#list
         br
         | Published: #{book.year}
         br
-        | Page: #{book.pages}
-        br
-        | Author ID: #{book.book_author.pluck(:author_id)}
+        | Page: #{book.pages} 
+        / Author ID: #{book.book_author.pluck(:author_id)}
       td
         - unless book.cover.nil?
           = image_tag book.cover, class: 'cover-item'
