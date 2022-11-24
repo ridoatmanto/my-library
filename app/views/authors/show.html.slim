@@ -1,0 +1,44 @@
+h1.center #{@author.name}
+
+p.center
+	b Born : 
+	- if @author.born != nil
+		| #{@author.born.strftime('%F')}. 
+	- else
+		| -. 
+
+	b Died : 
+	- if @author.died != nil
+		| #{@author.died.strftime('%F')}. 
+	- else
+		| -. 
+
+table#show
+	tr
+		td
+		  b Summary
+		td
+		  b #{':'} 
+		td
+			| #{@author.summary}
+
+	tr
+		td
+		  b Gender
+		td
+		  b #{':'} 
+		td
+			- if @author.gender == "m"
+				| Male
+			- elsif @author.gender == "f"
+				| Female
+			- else
+				| -
+
+	tr
+		td
+		  b Biography
+		td
+		  b #{':'} 
+		td
+			| #{@author.bio}

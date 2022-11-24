@@ -3,9 +3,16 @@
   They will automatically be included in application.css.
 */
 body {
+  background-color: #CCC;
+}
+
+#container {
+  background-color: white;
   width: 1200px;
   display: block;
-  margin: auto;
+  margin: 16px auto;
+  border: 2px dashed black;
+  padding: 16px;
 }
 
 .center {
