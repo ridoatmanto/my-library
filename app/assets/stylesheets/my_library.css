@@ -25,12 +25,33 @@ body {
   padding-bottom: 16px;
 }
 
+.cover-item {
+  display: block;
+  margin: auto;
+  padding-bottom: 8px;
+  width: 100px;
+}
+
 #show tr td {
   padding-bottom: 8px;
   padding-bottom: 8px;
   border-bottom: 1px solid #CCC;
   vertical-align: top;
   white-space: pre-line;
+}
+
+#list {
+  width: 600px;
+  display: block;
+  margin: auto;
+}
+
+#list tr td {
+  padding: 8px 0;
+  border-bottom: 4px dotted #CCC;
+  vertical-align: top;
+  white-space: pre-line;
+  width: 300px;
 }
 
 footer {

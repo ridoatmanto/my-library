@@ -228,6 +228,7 @@ GEM
     websocket-extensions (0.1.5)
     wicked_pdf (2.6.3)
       activesupport
+    will_paginate (3.3.1)
     wkhtmltopdf-binary (0.12.6.5)
 
 PLATFORMS
@@ -264,6 +265,7 @@ DEPENDENCIES
   tzinfo-data
   uuid
   wicked_pdf
+  will_paginate
   wkhtmltopdf-binary
 
 RUBY VERSION

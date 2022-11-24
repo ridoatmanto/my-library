@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
 	def index
-    @author = Author.all
+    @authors = Author.all.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

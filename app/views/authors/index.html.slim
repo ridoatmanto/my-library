@@ -1,0 +1,34 @@
+h1.center List of Authors
+
+table#show
+
+table#list
+  tr
+    th
+      h3 Name
+    th
+      h3 Live at
+  - @authors.each do |author|
+    tr
+      td
+        i #{author.name}
+      td
+        b Born : 
+        - if author.born != nil
+          | #{author.born.strftime('%F')}. 
+        - else
+          | -. 
+
+        b Died : 
+        - if author.died != nil
+          | #{author.died.strftime('%F')}. 
+        - else
+          | -.
+
+br
+= will_paginate(@authors,
+    :previous_label => "&laquo;",
+    :next_label => "&raquo;",
+    :class=> "center" ,
+    :outer_window => 1,
+    :inner_window => 2)

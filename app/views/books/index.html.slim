@@ -1,4 +1,35 @@
-h1 Books#index
+h1.center List of Book
 
-p
-  Find me in app/views/books/index.html.slim
+p.center
+  | List of IDs : #{@books.pluck(:id)}
+
+table#show
+
+table#list
+  tr
+    th
+      h3 Title
+    th
+      h3 Cover
+  - @books.each do |book|
+    tr
+      td
+        i #{book.title}
+        br
+        | Published: #{book.year}
+        br
+        | Page: #{book.pages}
+        br
+        | Author ID: #{book.book_author.pluck(:author_id)}
+      td
+        - unless book.cover.nil?
+          = image_tag book.cover, class: 'cover-item'
+        - else
+          | (no image)
+br
+= will_paginate(@books,
+    :previous_label => "&laquo;",
+    :next_label => "&raquo;",
+    :class=> "center" ,
+    :outer_window => 1,
+    :inner_window => 2)
