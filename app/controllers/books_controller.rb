@@ -1,22 +1,23 @@
 class BooksController < ApplicationController
 	def index
+    @books = Book.where(nil)
+    
     if params[:year].present?
       # pass variable example: &year[]=1950&year[]=1978
-      return @books = Book.filter_by_year(params[:year]).paginate(:page => params[:page], :per_page => 10) 
+      @books = @books.filter_by_year(params[:year]).paginate(:page => params[:page], :per_page => 10) 
     end
 
     if params[:author_id].present?
       # pass variable example: &author_id[]=1&author_id[]=2
-      return @books = Book.filter_by_author_id(params[:author_id]).paginate(:page => params[:page], :per_page => 10) 
+      @books = @books.filter_by_author_id(params[:author_id]).paginate(:page => params[:page], :per_page => 10) 
     end
-    #   @books = Book.where(nil)
-    #   @books = @books.filter_by_author_id(params[:author_id]) if params[:author_id].present?
-    #   @books = @books.filter_by_year(params[:year]) if params[:year].present?
-    #   @books = @books.filter_by_minimum_book_page(params[:min_page]) if params[:min_page].present?
+    
+    if params[:min_page].present?
+      @books = @books.filter_by_minimum_book_page(params[:min_page]) if params[:min_page].present?
+    end
     #   @books = @books.filter_by_maximum_book_page(params[:max_page]) if params[:max_page].present?
     #   return @books.paginate(:page => params[:page], :per_page => 10)
-    # end
-    # @books = Book.all.paginate(:page => params[:page], :per_page => 10)
+    @books = @books.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
