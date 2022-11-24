@@ -1,0 +1,67 @@
+h1.center #{@book.title}
+= image_tag @book.cover, id: 'cover-center'
+
+table#show
+	tr
+		td
+		  b Summary
+		td
+		  b #{':'} 
+		td
+			| #{@book.summary}
+
+	tr
+		td
+		  b Year
+		td
+		  b #{':'} 
+		td
+			| #{@book.year}
+
+	tr
+		td
+		  b Plot
+		td
+		  b #{':'} 
+		td
+			| #{@book.plot}
+
+	tr
+		td
+		  b Copyright
+		td
+		  b #{':'} 
+		td
+			| #{@book.copyright}
+
+	tr
+		td
+		  b Description
+		td
+		  b #{':'} 
+		td
+			| #{Slim::Template.new{ @book.description }.render.html_safe}
+
+	tr
+		td
+		  b Language
+		td
+		  b #{':'} 
+		td
+			| #{@book.language}
+
+	tr
+		td
+		  b Release date
+		td
+		  b #{':'} 
+		td
+			| #{@book.release_date}
+
+	tr
+		td
+		  b classes
+		td
+		  b #{':'} 
+		td
+			| #{@book.classes}
