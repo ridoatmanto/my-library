@@ -26,7 +26,9 @@ Sample output will be similar like this
 ```
 
 * Seeding Data
-```~ rails db:seed```
+```
+~ rails db:seed
+```
 
 Sample output will be 
 ```
@@ -42,7 +44,9 @@ Data Seeder has finished. Thank you!
 ```
 
 * Running the application
-```~ rails s```
+```
+~ rails s
+```
 
 Enjoy!
 
