@@ -11,6 +11,10 @@
 
   <body>
     <div id="container">
+      <menu>
+        <a href="<%= ENV['APP_URL'] %>books">Books</a> &middot; 
+        <a href="<%= ENV['APP_URL'] %>authors">Authors</a> &middot; 
+      </menu>
       <%= yield %>
     </div>
   </body>

@@ -1,0 +1,33 @@
+= form_with model: @author do |form|
+  div
+    = form.label :name
+    br
+    = form.text_field :name
+
+  div
+    = form.label :gender
+    br
+    = form.text_field :gender
+
+  div
+    = form.label :bio
+    br
+    = form.text_area :bio
+
+  div
+    = form.label :born
+    br
+    = form.date_field :born
+
+  div
+    = form.label :dead
+    br
+    = form.date_field :dead
+
+  div
+    = form.label :summary
+    br
+    = form.text_area :summary
+
+  div
+    = form.submit

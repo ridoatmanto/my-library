@@ -9,6 +9,12 @@ class AuthorsController < ApplicationController
     redirect_to(root_url, :notice => 'Author not found')
   end
 
+  def edit
+    @author = Author.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to(root_url, :notice => 'Author not found')
+  end
+
   def new
     @author = Author.new
   end

@@ -1,7 +1,7 @@
 h1.center List of Book
 
 p.center
-  | List of IDs : #{@books.pluck(:id)}
+  | List of Book IDs : #{@books.pluck(:id)}
 
 table#show
 
@@ -14,12 +14,17 @@ table#list
   - @books.each do |book|
     tr
       td
-        i #{book.title}
+        i 
+          = link_to book.title, "#{ENV['APP_URL']}books/#{book.id}", target: "_blank"
         br
         | Published: #{book.year}
         br
         | Page: #{book.pages} 
         / Author ID: #{book.book_author.pluck(:author_id)}
+        br
+        = link_to 'Edit', "#{ENV['APP_URL']}books/#{book.id}/edit", target: "_blank"
+        |  | 
+        = link_to 'Delete', "#{ENV['APP_URL']}books/#{book.id}/delete"
       td
         - unless book.cover.nil?
           = image_tag book.cover, class: 'cover-item'

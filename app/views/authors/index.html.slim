@@ -12,6 +12,10 @@ table#list
     tr
       td
         i #{author.name}
+        br
+        = link_to 'Edit', "#{ENV['APP_URL']}authors/#{author.id}/edit", target: "_blank"
+        |  | 
+        = link_to 'Delete', "#{ENV['APP_URL']}authors/#{author.id}/delete"
       td
         b Born : 
         - if author.born != nil
