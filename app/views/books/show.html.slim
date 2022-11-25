@@ -2,6 +2,9 @@ h1.center #{@book.title}
 = image_tag @book.cover, id: 'cover-center'
 p.center
   = link_to 'Edit', "#{ENV['APP_URL']}books/#{@book.id}/edit", target: "_blank"
+  |  | 
+  = link_to 'Remove', book_path(@book), method: 'delete', data: { confirm: "Are you sure delete '#{@book.title}?" }
+
 table#show
   tr
     td

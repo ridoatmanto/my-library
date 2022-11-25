@@ -15,7 +15,8 @@ p.center
 
 p.center
   = link_to 'Edit', "#{ENV['APP_URL']}authors/#{@author.id}/edit", target: "_blank"
-
+  |  | 
+  = link_to 'Remove', author_path(@author), method: 'delete', data: { confirm: "Are you sure delete '#{@author.name}?" }
 table#show
 	tr
 		td
