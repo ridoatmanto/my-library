@@ -13,7 +13,15 @@
     <div id="container">
       <menu>
         <a href="<%= ENV['APP_URL'] %>books">Books</a> &middot; 
-        <a href="<%= ENV['APP_URL'] %>authors">Authors</a> &middot; 
+        <a href="<%= ENV['APP_URL'] %>authors">Authors</a> &middot;  
+        <br>
+        <br>
+        Sample Page : 
+        <a href="<%= ENV['APP_URL'] %>books?year[]=1950&year[]=1978">Books by Year(s) Published</a> &middot; 
+        <a href="<%= ENV['APP_URL'] %>books?author_id[]=1&author_id[]=2">Books by Author(s)</a> &middot; 
+        <a href="<%= ENV['APP_URL'] %>books?min_page=100">Books by Minimum Page</a> &middot; 
+        <a href="<%= ENV['APP_URL'] %>books?max_page=300">Books by Maximum Page</a> &middot; 
+        <a href="<%= ENV['APP_URL'] %>books?min_page=100&max_page=300">Books by Range of Page</a> &middot; 
       </menu>
       <%= yield %>
     </div>

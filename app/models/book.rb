@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-	has_many :book_author
+  has_many :book_author
 
   scope :filter_by_author_id, -> (author_id) {
   	# includes has better performance than joins
