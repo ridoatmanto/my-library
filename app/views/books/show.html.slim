@@ -1,6 +1,7 @@
 h1.center #{@book.title}
 = image_tag @book.cover, id: 'cover-center'
-
+p.center
+  = link_to 'Edit', "#{ENV['APP_URL']}books/#{@book.id}/edit", target: "_blank"
 table#show
   tr
     td
@@ -40,7 +41,10 @@ table#show
     td
       b #{':'} 
     td
-      | #{Slim::Template.new{ @book.description }.render.html_safe}
+      - if @book.description != nil
+        | #{Slim::Template.new{ @book.description }.render.html_safe}
+      - else
+        | -. 
 
   tr
     td

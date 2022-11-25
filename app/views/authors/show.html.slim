@@ -13,6 +13,9 @@ p.center
 	- else
 		| -. 
 
+p.center
+  = link_to 'Edit', "#{ENV['APP_URL']}authors/#{@author.id}/edit", target: "_blank"
+
 table#show
 	tr
 		td

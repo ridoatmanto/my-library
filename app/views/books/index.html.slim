@@ -1,4 +1,6 @@
 h1.center List of Book
+p.center
+  = link_to 'New Book', "#{ENV['APP_URL']}books/new", target: "_blank"
 
 p.center
   | List of Book IDs : #{@books.pluck(:id)}
