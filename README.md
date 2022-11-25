@@ -1,10 +1,11 @@
 # My Library App
 Managing your books easily.
 
-### Database creation
+* Database creation
 ```
 ~ rails db:create
-~ rails db:migrate```
+~ rails db:migrate
+```
 
 Sample output will be similar like this
 ```
@@ -24,9 +25,9 @@ Sample output will be similar like this
 == 20221123212732 CreateBookAuthors: migrated (0.0246s) =======================
 ```
 
-
-### Seeding Data
+* Seeding Data
 ```~ rails db:seed```
+
 Sample output will be 
 ```
 ----------------------------------------------------------------
@@ -38,13 +39,12 @@ Importing Book Authors... 7067 saved.
 
 Data Seeder has finished. Thank you!
 ----------------------------------------------------------------
-
 ```
 
-### Running the application
+* Running the application
 ```~ rails s```
 
 Enjoy!
 
-Rido Atmanto
-Created November 25th 2022
+**Rido Atmanto**
+*Created November 25th 2022*
